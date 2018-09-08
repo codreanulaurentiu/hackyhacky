@@ -20,7 +20,7 @@ class FixturesCommand extends ContainerAwareCommand
 {
     private $users = [
         'alex.p@snuff.com',
-      'laur@snuff.com',
+        'laur@snuff.com',
         'alex.t@snuff.com',
         'ciprian@snuff.com',
         'mihaela@snuff.com',
@@ -30,10 +30,17 @@ class FixturesCommand extends ContainerAwareCommand
     /** @var ObjectManager */
     private $manager;
 
+    protected function configure()
+    {
+        $this
+            ->setName('fixtures:fake')
+            ->setDescription('Dumps dummy data in the DB');
+    }
+
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         /** @var RegistryInterface $doctrine */
-        $doctrine = $this->getContainer()->get('doctrine');
+        $doctrine      = $this->getContainer()->get('doctrine');
         $this->manager = $doctrine->getManager();
 
         $this->createUsers();
