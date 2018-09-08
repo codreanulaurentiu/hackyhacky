@@ -22,7 +22,6 @@ class Client
     /**
      * @var string
      *
-     * @Assert\NotBlank(message = "clients.email_mandatory")
      * @ORM\Column(name="email", type="string")
      */
     protected $email;
@@ -30,7 +29,6 @@ class Client
     /**
      * @var string
      *
-     * @Assert\NotBlank(message = "clients.username_mandatory")
      * @ORM\Column(name="name", type="string")
      */
     protected $name;
