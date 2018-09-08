@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Items list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Type</th>
+                <th>Recommendedexpiredate</th>
+                <th>Name</th>
+                <th>Externalref</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for item in items %}
+            <tr>
+                <td><a href="{{ path('item_show', { 'id': item.id }) }}">{{ item.id }}</a></td>
+                <td>{{ item.type }}</td>
+                <td>{% if item.recommendedExpireDate %}{{ item.recommendedExpireDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.externalRef }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('item_show', { 'id': item.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('item_edit', { 'id': item.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('item_new') }}">Create a new item</a>
+        </li>
+    </ul>
+{% endblock %}

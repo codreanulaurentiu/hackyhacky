@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Fridgeinventory</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ fridgeInventory.id }}</td>
+            </tr>
+            <tr>
+                <th>Quantity</th>
+                <td>{{ fridgeInventory.quantity }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ fridgeInventory.price }}</td>
+            </tr>
+            <tr>
+                <th>Initialquantity</th>
+                <td>{{ fridgeInventory.initialQuantity }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ fridgeInventory.status }}</td>
+            </tr>
+            <tr>
+                <th>Boughtat</th>
+                <td>{% if fridgeInventory.boughtAt %}{{ fridgeInventory.boughtAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Removedat</th>
+                <td>{% if fridgeInventory.removedAt %}{{ fridgeInventory.removedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Expiredat</th>
+                <td>{% if fridgeInventory.expiredAt %}{{ fridgeInventory.expiredAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('fridgeinventory_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('fridgeinventory_edit', { 'id': fridgeInventory.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

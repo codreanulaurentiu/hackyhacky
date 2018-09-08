@@ -17,4 +17,5 @@
 /web/bundles/
 .idea/
 composer.phar
+htdocs
 

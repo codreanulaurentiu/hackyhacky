@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Purchasehistory</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ purchaseHistory.id }}</td>
+            </tr>
+            <tr>
+                <th>Boughtat</th>
+                <td>{% if purchaseHistory.boughtAt %}{{ purchaseHistory.boughtAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Quantity</th>
+                <td>{{ purchaseHistory.quantity }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ purchaseHistory.price }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('purchasehistory_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('purchasehistory_edit', { 'id': purchaseHistory.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

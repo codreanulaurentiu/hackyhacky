@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Fridgeinventories list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Initialquantity</th>
+                <th>Status</th>
+                <th>Boughtat</th>
+                <th>Removedat</th>
+                <th>Expiredat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for fridgeInventory in fridgeInventories %}
+            <tr>
+                <td><a href="{{ path('fridgeinventory_show', { 'id': fridgeInventory.id }) }}">{{ fridgeInventory.id }}</a></td>
+                <td>{{ fridgeInventory.quantity }}</td>
+                <td>{{ fridgeInventory.price }}</td>
+                <td>{{ fridgeInventory.initialQuantity }}</td>
+                <td>{{ fridgeInventory.status }}</td>
+                <td>{% if fridgeInventory.boughtAt %}{{ fridgeInventory.boughtAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if fridgeInventory.removedAt %}{{ fridgeInventory.removedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if fridgeInventory.expiredAt %}{{ fridgeInventory.expiredAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('fridgeinventory_show', { 'id': fridgeInventory.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('fridgeinventory_edit', { 'id': fridgeInventory.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('fridgeinventory_new') }}">Create a new fridgeInventory</a>
+        </li>
+    </ul>
+{% endblock %}

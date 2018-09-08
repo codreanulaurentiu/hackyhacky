@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Foodwastehistories list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Clientid</th>
+                <th>Wastedat</th>
+                <th>Quantity</th>
+                <th>Wastedmoney</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for foodWasteHistory in foodWasteHistories %}
+            <tr>
+                <td><a href="{{ path('foodwastehistory_show', { 'id': foodWasteHistory.id }) }}">{{ foodWasteHistory.id }}</a></td>
+                <td>{{ foodWasteHistory.clientId }}</td>
+                <td>{% if foodWasteHistory.wastedAt %}{{ foodWasteHistory.wastedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ foodWasteHistory.quantity }}</td>
+                <td>{{ foodWasteHistory.wastedMoney }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('foodwastehistory_show', { 'id': foodWasteHistory.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('foodwastehistory_edit', { 'id': foodWasteHistory.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('foodwastehistory_new') }}">Create a new foodWasteHistory</a>
+        </li>
+    </ul>
+{% endblock %}

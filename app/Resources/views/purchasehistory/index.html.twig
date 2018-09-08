@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Purchasehistories list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Boughtat</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for purchaseHistory in purchaseHistories %}
+            <tr>
+                <td><a href="{{ path('purchasehistory_show', { 'id': purchaseHistory.id }) }}">{{ purchaseHistory.id }}</a></td>
+                <td>{% if purchaseHistory.boughtAt %}{{ purchaseHistory.boughtAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ purchaseHistory.quantity }}</td>
+                <td>{{ purchaseHistory.price }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('purchasehistory_show', { 'id': purchaseHistory.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('purchasehistory_edit', { 'id': purchaseHistory.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('purchasehistory_new') }}">Create a new purchaseHistory</a>
+        </li>
+    </ul>
+{% endblock %}
