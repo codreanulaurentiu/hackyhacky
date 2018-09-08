@@ -3,6 +3,8 @@
 namespace AppBundle\Command;
 
 
+use AppBundle\Entity\ClientFridge;
+use AppBundle\Entity\Fridge;
 use AppBundle\Entity\Item;
 use AppBundle\Entity\User;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -87,7 +89,13 @@ class FixturesCommand extends ContainerAwareCommand
         $dbUSers = $this->manager->getRepository(User::class)->findAll();
 
         foreach ($dbUSers as $user) {
+            $mapping = new ClientFridge();
+            $fridge = new Fridge();
+            $mapping->setFridgeId($fridge);
+            $mapping->setClientId($user);
 
+            $this->manager->persist($fridge);
+            $this->manager->persist($mapping);
         }
 
         $this->doIt();
