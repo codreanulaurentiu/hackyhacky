@@ -45,13 +45,22 @@ class FixturesCommand extends ContainerAwareCommand
         $this->manager = $doctrine->getManager();
         $this->outputInterface = $output;
 
+        $this->outputInterface->writeln('Preparing to clear out old fake data!');
+        $this->outputInterface->writeln('3...');
+        $this->outputInterface->writeln('2...');
+        $this->outputInterface->writeln('1...');
+
+        $this->clearOutTheOld();
+
         $this->outputInterface->writeln('Preparing to create fake data!');
         $this->outputInterface->writeln('3...');
         $this->outputInterface->writeln('2...');
         $this->outputInterface->writeln('1...');
 
-        $this->createGenericItems();
+
+        //If you change this order you break shit
         $this->createUsers();
+        $this->giveEveryoneAFridge();
 
         $this->outputInterface->writeln('DONE!');
 
@@ -108,4 +117,22 @@ class FixturesCommand extends ContainerAwareCommand
         $this->outputInterface->writeln('DONE!');
     }
 
+    protected function clearOutTheOld(): void
+    {
+        $generics = [
+            ClientFridge::class,
+            User::class,
+            Fridge::class
+        ];
+
+        foreach ($generics as $class) {
+            $objects = $this->manager->getRepository($class)->findAll();
+
+            foreach ($objects as $object) {
+                $this->manager->remove($object);
+            }
+        }
+
+        $this->doIt();
+    }
 }
