@@ -34,9 +34,9 @@ class ClientFridge
     protected $clientId;
 
     /**
-     * @var  FridgeInventory
+     * @var  Fridge
      *
-     * @ORM\ManyToOne(targetEntity="FridgeInventory", inversedBy="owners")
+     * @ORM\ManyToOne(targetEntity="Fridge", inversedBy="owners")
      * @ORM\JoinColumn(name="fridge_id", referencedColumnName="id")
      */
     protected $fridgeId;
@@ -78,7 +78,7 @@ class ClientFridge
     }
 
     /**
-     * @return FridgeInventory
+     * @return Fridge
      */
     public function getFridgeId()
     {
@@ -86,10 +86,10 @@ class ClientFridge
     }
 
     /**
-     * @param FridgeInventory $fridgeId
+     * @param Fridge $fridgeId
      * @return ClientFridge
      */
-    public function setFridgeId(FridgeInventory $fridgeId)
+    public function setFridgeId(Fridge $fridgeId)
     {
         $this->fridgeId = $fridgeId;
         return $this;

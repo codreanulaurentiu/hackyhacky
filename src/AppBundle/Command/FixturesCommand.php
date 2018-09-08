@@ -1,14 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: alexandru.pop
- * Date: 9/8/2018
- * Time: 10:47 PM
- */
 
 namespace AppBundle\Command;
 
 
+use AppBundle\Entity\Item;
 use AppBundle\Entity\User;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Bridge\Doctrine\RegistryInterface;
@@ -27,8 +22,12 @@ class FixturesCommand extends ContainerAwareCommand
         'gabriela@snuff.com'
     ];
 
+
     /** @var ObjectManager */
     private $manager;
+
+    /** @var OutputInterface */
+    private $outputInterface;
 
     protected function configure()
     {
@@ -42,13 +41,24 @@ class FixturesCommand extends ContainerAwareCommand
         /** @var RegistryInterface $doctrine */
         $doctrine      = $this->getContainer()->get('doctrine');
         $this->manager = $doctrine->getManager();
+        $this->outputInterface = $output;
 
+        $this->outputInterface->writeln('Preparing to create fake data!');
+        $this->outputInterface->writeln('3...');
+        $this->outputInterface->writeln('2...');
+        $this->outputInterface->writeln('1...');
+
+        $this->createGenericItems();
         $this->createUsers();
+
+        $this->outputInterface->writeln('DONE!');
 
     }
 
     protected function createUsers(): void
     {
+        $this->outputInterface->writeln('Creating fake users');
+
         foreach ($this->users as $user) {
             $dbUser = new User();
             $dbUser->setEmail($user);
@@ -59,7 +69,35 @@ class FixturesCommand extends ContainerAwareCommand
             $this->manager->persist($dbUser);
         }
 
+        $this->doIt();
+    }
+
+    private function createGenericItems()
+    {
+        $this->outputInterface->writeln('Creating fake users');
+
+
+        $this->doIt();
+    }
+
+    protected function giveEveryoneAFridge(): void
+    {
+        $this->outputInterface->writeln('give Everyone A Fridge!');
+
+        $dbUSers = $this->manager->getRepository(User::class)->findAll();
+
+        foreach ($dbUSers as $user) {
+
+        }
+
+        $this->doIt();
+    }
+
+    protected function doIt(): void
+    {
+        $this->outputInterface->writeln('Flushing!');
         $this->manager->flush();
+        $this->outputInterface->writeln('DONE!');
     }
 
 }
