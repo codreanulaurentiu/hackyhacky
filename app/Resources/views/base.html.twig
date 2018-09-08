@@ -43,7 +43,19 @@
                     </div>
                 </div>
             </header>
-            {% block body %}{% endblock %}
+            <!-- #main -->
+            <div id="main" class="site-main">
+                <!-- #primary -->
+                <div id="primary" class="content-area">
+                    <!-- #content -->
+                    <div id="content" class="site-content" role="main">
+                        {% block body %}{% endblock %}
+                    </div><!-- #content -->
+                </div><!-- #primary -->
+            </div><!-- #main -->
+            <footer>
+
+            </footer><!-- #co
             {% block javascripts %}{% endblock %}
         </div>
 </body>
