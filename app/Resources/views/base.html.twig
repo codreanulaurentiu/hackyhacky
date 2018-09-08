@@ -4,11 +4,10 @@
         <meta charset="UTF-8" />
         <title>{% block title %}SnuFF!{% endblock %}</title>
         {% block stylesheets %}
-
+            <link href="{{ asset('css/menu.css') }}" rel="stylesheet" />
+            <link href="{{ asset('css/global.css') }}" rel="stylesheet" />
+            <link rel="stylesheet" id="sb-font-awesome-css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" media="all">
         {% endblock %}
-        <link rel="stylesheet" id="sb-font-awesome-css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" media="all">
-        <link rel="stylesheet" id="menu" href="../public/css/menu.css" type="text/css" media="all">
-        <link rel="stylesheet" id="global" href="../public/css/global.css" type="text/css" media="all">
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
