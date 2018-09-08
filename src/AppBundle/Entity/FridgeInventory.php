@@ -23,11 +23,12 @@ class FridgeInventory
     private $id;
 
     /**
-     * @var ClientFridge[]
+     * @var Fridge
      *
-     * @ORM\OneToMany(targetEntity="ClientFridge", mappedBy="fridgeId")
+     * @ORM\ManyToOne(targetEntity="Fridge")
+     * @ORM\JoinColumn(name="fridge_id", referencedColumnName="id")
      */
-    private $owners;
+    private $fridgeId;
 
     /**
      * @var Item
@@ -249,20 +250,20 @@ class FridgeInventory
     }
 
     /**
-     * @return ClientFridge[]
+     * @return Fridge
      */
-    public function getOwners(): array
+    public function getFridgeId()
     {
-        return $this->owners;
+        return $this->fridgeId;
     }
 
     /**
-     * @param ClientFridge[] $owners
+     * @param Fridge $fridgeId
      * @return FridgeInventory
      */
-    public function setOwners(array $owners)
+    public function setFridgeId($fridgeId)
     {
-        $this->owners = $owners;
+        $this->fridgeId = $fridgeId;
         return $this;
     }
 }
