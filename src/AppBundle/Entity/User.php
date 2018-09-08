@@ -147,7 +147,7 @@ class User implements UserInterface, \Serializable
     /**
      * @return ClientFridge[]
      */
-    public function getOwnedFridges(): array
+    public function getOwnedFridges()
     {
         return $this->ownedFridges;
     }
@@ -160,5 +160,21 @@ class User implements UserInterface, \Serializable
     {
         $this->ownedFridges = $ownedFridges;
         return $this;
+    }
+
+    /**
+     * @param mixed $username
+     */
+    public function setUsername($username): void
+    {
+        $this->username = $username;
+    }
+
+    /**
+     * @param mixed $password
+     */
+    public function setPassword($password): void
+    {
+        $this->password = $password;
     }
 }
