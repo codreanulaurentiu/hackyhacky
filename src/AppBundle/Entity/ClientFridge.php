@@ -26,18 +26,20 @@ class ClientFridge
     protected $id;
 
     /**
-     * @var  int
+     * @var  Client
      *
-     *@ORM\Column(name="client_id", type="integer", options={"unsigned"=false}, nullable=false)
+     * @ORM\ManyToOne(targetEntity="Client", inversedBy="ownedFridges")
+     * @ORM\JoinColumn(name="client_id", referencedColumnName="id")
      */
-    protected $client_id;
+    protected $clientId;
 
     /**
-     * @var  int
+     * @var  FridgeInventory
      *
-     *@ORM\Column(name="fridge_id", type="integer", options={"unsigned"=false}, nullable=false)
+     * @ORM\ManyToOne(targetEntity="FridgeInventory", inversedBy="owners")
+     * @ORM\JoinColumn(name="fridge_id", referencedColumnName="id")
      */
-    protected $fridge_id;
+    protected $fridgeId;
 
     /**
      * @return int
@@ -49,43 +51,47 @@ class ClientFridge
 
     /**
      * @param int $id
+     * @return ClientFridge
      */
-    public function setId(int $id)
+    public function setId(int $id): ClientFridge
     {
         $this->id = $id;
+        return $this;
     }
 
     /**
-     * @return int
+     * @return Client
      */
-    public function getClientId(): int
+    public function getClientId(): Client
     {
-        return $this->client_id;
+        return $this->clientId;
     }
 
     /**
-     * @param int $client_id
+     * @param Client $clientId
+     * @return ClientFridge
      */
-    public function setClientId(int $client_id)
+    public function setClientId(Client $clientId): ClientFridge
     {
-        $this->client_id = $client_id;
+        $this->clientId = $clientId;
+        return $this;
     }
 
     /**
-     * @return int
+     * @return FridgeInventory
      */
-    public function getFridgeId(): int
+    public function getFridgeId(): FridgeInventory
     {
-        return $this->fridge_id;
+        return $this->fridgeId;
     }
 
     /**
-     * @param int $fridge_id
+     * @param FridgeInventory $fridgeId
+     * @return ClientFridge
      */
-    public function setFridgeId(int $fridge_id)
+    public function setFridgeId(FridgeInventory $fridgeId): ClientFridge
     {
-        $this->fridge_id = $fridge_id;
+        $this->fridgeId = $fridgeId;
+        return $this;
     }
-
-
 }
