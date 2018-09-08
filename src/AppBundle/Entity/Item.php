@@ -30,7 +30,7 @@ class Item
     private $type;
 
     /**
-     * @var \DateTime
+     * @var integer
      *
      * @ORM\Column(type="datetime", name="recommended_expire_date")
      */
@@ -48,7 +48,7 @@ class Item
      *
      * @ORM\Column(type="string", length=200, name="external_ref")
      */
-    private $externalRef;
+    private $externalRef = '';
 
     /**
      * @return int
@@ -87,7 +87,7 @@ class Item
     }
 
     /**
-     * @return \DateTime
+     * @return integer
      */
     public function getRecommendedExpireDate()
     {
@@ -95,10 +95,10 @@ class Item
     }
 
     /**
-     * @param \DateTime $recommendedExpireDate
+     * @param integer $recommendedExpireDate
      * @return Item
      */
-    public function setRecommendedExpireDate(\DateTime $recommendedExpireDate)
+    public function setRecommendedExpireDate(int $recommendedExpireDate)
     {
         $this->recommendedExpireDate = $recommendedExpireDate;
         return $this;
