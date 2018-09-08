@@ -28,7 +28,7 @@ class ClientBadge
     /**
      * @var  int
      *
-     * @ORM\ManyToOne(targetEntity="Client")
+     * @ORM\ManyToOne(targetEntity="User")
      * @ORM\JoinColumn(name="client_id", referencedColumnName="id")
      */
     protected $client_id;
