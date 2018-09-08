@@ -6,8 +6,8 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
+ * @ORM\Entity
  * @ORM\Table(name="app_users")
-
  */
 class User implements UserInterface, \Serializable
 {
