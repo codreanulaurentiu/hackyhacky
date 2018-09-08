@@ -5,8 +5,8 @@ use Doctrine\ORM\Mapping as ORM;
 
 
 /**
- * @Entity
- * @Table(name="clients")
+ * @ORM\Entity
+ * @ORM\Table(name="clients")
  */
 class Client
 {

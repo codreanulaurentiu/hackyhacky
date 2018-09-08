@@ -11,8 +11,8 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @Entity
- * @Table(name="client_fridges")
+ * @ORM\Entity
+ * @ORM\able(name="client_fridges")
  */
 class ClientFridge
 {

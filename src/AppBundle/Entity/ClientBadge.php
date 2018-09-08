@@ -11,8 +11,8 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @Entity
- * @Table(name="client_badges")
+ * @ORM\Entity
+ * @ORM\Table(name="client_badges")
  */
 class ClientBadge
 {
