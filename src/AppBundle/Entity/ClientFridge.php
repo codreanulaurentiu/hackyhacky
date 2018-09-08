@@ -12,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\able(name="client_fridges")
+ * @ORM\Table(name="client_fridges")
  */
 class ClientFridge
 {
