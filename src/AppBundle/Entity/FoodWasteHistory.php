@@ -61,7 +61,7 @@ class FoodWasteHistory
     /**
      * @return int
      */
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
     }
@@ -79,7 +79,7 @@ class FoodWasteHistory
     /**
      * @return int
      */
-    public function getClientId(): int
+    public function getClientId()
     {
         return $this->clientId;
     }
@@ -97,7 +97,7 @@ class FoodWasteHistory
     /**
      * @return Item
      */
-    public function getItemId(): Item
+    public function getItemId()
     {
         return $this->itemId;
     }

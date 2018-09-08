@@ -106,7 +106,7 @@ class PurchaseHistory
     /**
      * @return int|null
      */
-    public function getQuantity(): ?int
+    public function getQuantity()
     {
         return $this->quantity;
     }
@@ -124,7 +124,7 @@ class PurchaseHistory
     /**
      * @return int|null
      */
-    public function getPrice(): ?int
+    public function getPrice()
     {
         return $this->price;
     }

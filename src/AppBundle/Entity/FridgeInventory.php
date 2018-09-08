@@ -179,7 +179,7 @@ class FridgeInventory
     /**
      * @return int
      */
-    public function getStatus(): int
+    public function getStatus()
     {
         return $this->status;
     }
