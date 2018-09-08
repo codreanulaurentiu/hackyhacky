@@ -41,6 +41,13 @@ class Client
     protected $ext_id;
 
     /**
+     * @var ClientFridge[]
+     *
+     * @ORM\OneToMany(targetEntity="ClientFridge", mappedBy="clientId")
+     */
+    private $ownedFridges;
+
+    /**
      * @return int
      */
     public function getId(): int
@@ -104,4 +111,21 @@ class Client
         $this->ext_id = $ext_id;
     }
 
+    /**
+     * @return ClientFridge[]
+     */
+    public function getOwnedFridges(): array
+    {
+        return $this->ownedFridges;
+    }
+
+    /**
+     * @param ClientFridge[] $ownedFridges
+     * @return Client
+     */
+    public function setOwnedFridges(array $ownedFridges): Client
+    {
+        $this->ownedFridges = $ownedFridges;
+        return $this;
+    }
 }
