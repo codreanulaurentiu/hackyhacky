@@ -94,4 +94,9 @@ class Fridge
         $this->fridgeStuff = $fridgeStuff;
         return $this;
     }
+
+    public function __toString()
+    {
+        return (string)$this->id;
+    }
 }

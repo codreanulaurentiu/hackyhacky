@@ -29,6 +29,8 @@ class User implements UserInterface, \Serializable
     private $password;
 
     /**
+     * @var string
+     *
      * @ORM\Column(type="string", length=254, unique=true)
      */
     private $email;
@@ -176,5 +178,10 @@ class User implements UserInterface, \Serializable
     public function setPassword($password): void
     {
         $this->password = $password;
+    }
+
+    public function __toString()
+    {
+        return $this->email;
     }
 }

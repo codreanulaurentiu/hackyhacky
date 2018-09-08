@@ -139,4 +139,9 @@ class Item
         $this->externalRef = $externalRef;
         return $this;
     }
+
+    public function __toString()
+    {
+        return $this->name;
+    }
 }
