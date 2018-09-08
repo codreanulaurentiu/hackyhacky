@@ -30,11 +30,11 @@
                                 </li>
                                 <li id="menu-item-29"
                                     class="square navigation menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-29">
-                                    <a href="{{ path('foodwastehistory_index') }}"><span>Recipes</span>
+                                    <a href="{{ path('fridgeinventory_index') }}"><span>Recipes</span>
                                     </a>
                                 </li>
                                 <li id="menu-item-16" class="square ventures menu-item menu-item-type-post_type menu-item-object-page menu-item-16">
-                                    <a href="{{ path('purchasehistory_index') }}"><span>Shop</span>
+                                    <a href="{{ path('fridgeinventory_index') }}"><span>Shop</span>
                                     </a>
                                 </li>
                             </ul>
@@ -43,8 +43,20 @@
                     </div>
                 </div>
             </header>
-            {% block body %}{% endblock %}
+            <!-- #main -->
+            <div id="main" class="site-main">
+                <!-- #primary -->
+                <div id="primary" class="content-area">
+                    <!-- #content -->
+                    <div id="content" class="site-content" role="main">
+                        {% block body %}{% endblock %}
+                    </div><!-- #content -->
+                </div><!-- #primary -->
+            </div><!-- #main -->
+            <footer>
+
+            </footer><!-- #co
             {% block javascripts %}{% endblock %}
         </div>
-    </body>
+</body>
 </html>
