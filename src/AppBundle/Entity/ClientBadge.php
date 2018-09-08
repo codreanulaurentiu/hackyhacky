@@ -43,7 +43,7 @@ class ClientBadge
     /**
      * @return int
      */
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
     }
@@ -59,7 +59,7 @@ class ClientBadge
     /**
      * @return int
      */
-    public function getClientId(): int
+    public function getClientId()
     {
         return $this->client_id;
     }
@@ -75,7 +75,7 @@ class ClientBadge
     /**
      * @return int
      */
-    public function getBadgeId(): int
+    public function getBadgeId()
     {
         return $this->badge_id;
     }

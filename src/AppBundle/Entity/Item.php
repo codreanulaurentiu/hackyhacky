@@ -53,7 +53,7 @@ class Item
     /**
      * @return int
      */
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
     }
@@ -62,7 +62,7 @@ class Item
      * @param int $id
      * @return Item
      */
-    public function setId(int $id): Item
+    public function setId(int $id)
     {
         $this->id = $id;
         return $this;
@@ -71,7 +71,7 @@ class Item
     /**
      * @return int
      */
-    public function getType(): int
+    public function getType()
     {
         return $this->type;
     }
@@ -80,7 +80,7 @@ class Item
      * @param int $type
      * @return Item
      */
-    public function setType(int $type): Item
+    public function setType(int $type)
     {
         $this->type = $type;
         return $this;
@@ -89,7 +89,7 @@ class Item
     /**
      * @return \DateTime
      */
-    public function getRecommendedExpireDate(): \DateTime
+    public function getRecommendedExpireDate()
     {
         return $this->recommendedExpireDate;
     }
@@ -98,7 +98,7 @@ class Item
      * @param \DateTime $recommendedExpireDate
      * @return Item
      */
-    public function setRecommendedExpireDate(\DateTime $recommendedExpireDate): Item
+    public function setRecommendedExpireDate(\DateTime $recommendedExpireDate)
     {
         $this->recommendedExpireDate = $recommendedExpireDate;
         return $this;
@@ -107,7 +107,7 @@ class Item
     /**
      * @return string
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->name;
     }
@@ -116,7 +116,7 @@ class Item
      * @param string $name
      * @return Item
      */
-    public function setName(string $name): Item
+    public function setName(string $name)
     {
         $this->name = $name;
         return $this;
@@ -125,7 +125,7 @@ class Item
     /**
      * @return string
      */
-    public function getExternalRef(): string
+    public function getExternalRef()
     {
         return $this->externalRef;
     }
@@ -134,7 +134,7 @@ class Item
      * @param string $externalRef
      * @return Item
      */
-    public function setExternalRef(string $externalRef): Item
+    public function setExternalRef(string $externalRef)
     {
         $this->externalRef = $externalRef;
         return $this;

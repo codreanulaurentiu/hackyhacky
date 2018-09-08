@@ -70,7 +70,7 @@ class FoodWasteHistory
      * @param int $id
      * @return FoodWasteHistory
      */
-    public function setId(int $id): FoodWasteHistory
+    public function setId(int $id)
     {
         $this->id = $id;
         return $this;
@@ -88,7 +88,7 @@ class FoodWasteHistory
      * @param int $clientId
      * @return FoodWasteHistory
      */
-    public function setClientId(int $clientId): FoodWasteHistory
+    public function setClientId(int $clientId)
     {
         $this->clientId = $clientId;
         return $this;
@@ -106,7 +106,7 @@ class FoodWasteHistory
      * @param Item $itemId
      * @return FoodWasteHistory
      */
-    public function setItemId(Item $itemId): FoodWasteHistory
+    public function setItemId(Item $itemId)
     {
         $this->itemId = $itemId;
         return $this;
@@ -115,7 +115,7 @@ class FoodWasteHistory
     /**
      * @return \DateTime
      */
-    public function getWastedAt(): \DateTime
+    public function getWastedAt()
     {
         return $this->wastedAt;
     }
@@ -124,7 +124,7 @@ class FoodWasteHistory
      * @param \DateTime $wastedAt
      * @return FoodWasteHistory
      */
-    public function setWastedAt(\DateTime $wastedAt): FoodWasteHistory
+    public function setWastedAt(\DateTime $wastedAt)
     {
         $this->wastedAt = $wastedAt;
         return $this;
@@ -133,7 +133,7 @@ class FoodWasteHistory
     /**
      * @return null|string
      */
-    public function getQuantity(): ?string
+    public function getQuantity()
     {
         return $this->quantity;
     }
@@ -142,7 +142,7 @@ class FoodWasteHistory
      * @param null|string $quantity
      * @return FoodWasteHistory
      */
-    public function setQuantity(?string $quantity): FoodWasteHistory
+    public function setQuantity(?string $quantity)
     {
         $this->quantity = $quantity;
         return $this;
@@ -151,7 +151,7 @@ class FoodWasteHistory
     /**
      * @return null|string
      */
-    public function getWastedMoney(): ?string
+    public function getWastedMoney()
     {
         return $this->wastedMoney;
     }
@@ -160,7 +160,7 @@ class FoodWasteHistory
      * @param null|string $wastedMoney
      * @return FoodWasteHistory
      */
-    public function setWastedMoney(?string $wastedMoney): FoodWasteHistory
+    public function setWastedMoney(?string $wastedMoney)
     {
         $this->wastedMoney = $wastedMoney;
         return $this;

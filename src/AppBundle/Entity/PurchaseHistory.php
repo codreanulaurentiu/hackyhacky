@@ -52,7 +52,7 @@ class PurchaseHistory
     /**
      * @return int
      */
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
     }
@@ -61,7 +61,7 @@ class PurchaseHistory
      * @param int $id
      * @return PurchaseHistory
      */
-    public function setId(int $id): PurchaseHistory
+    public function setId(int $id)
     {
         $this->id = $id;
         return $this;
@@ -70,7 +70,7 @@ class PurchaseHistory
     /**
      * @return Item
      */
-    public function getItemId(): Item
+    public function getItemId()
     {
         return $this->itemId;
     }
@@ -79,7 +79,7 @@ class PurchaseHistory
      * @param Item $itemId
      * @return PurchaseHistory
      */
-    public function setItemId(Item $itemId): PurchaseHistory
+    public function setItemId(Item $itemId)
     {
         $this->itemId = $itemId;
         return $this;
@@ -88,7 +88,7 @@ class PurchaseHistory
     /**
      * @return \DateTime
      */
-    public function getBoughtAt(): \DateTime
+    public function getBoughtAt()
     {
         return $this->boughtAt;
     }
@@ -97,7 +97,7 @@ class PurchaseHistory
      * @param \DateTime $boughtAt
      * @return PurchaseHistory
      */
-    public function setBoughtAt(\DateTime $boughtAt): PurchaseHistory
+    public function setBoughtAt(\DateTime $boughtAt)
     {
         $this->boughtAt = $boughtAt;
         return $this;
@@ -115,7 +115,7 @@ class PurchaseHistory
      * @param int|null $quantity
      * @return PurchaseHistory
      */
-    public function setQuantity(?int $quantity): PurchaseHistory
+    public function setQuantity(?int $quantity)
     {
         $this->quantity = $quantity;
         return $this;
@@ -133,7 +133,7 @@ class PurchaseHistory
      * @param int|null $price
      * @return PurchaseHistory
      */
-    public function setPrice(?int $price): PurchaseHistory
+    public function setPrice(?int $price)
     {
         $this->price = $price;
         return $this;

@@ -89,7 +89,7 @@ class FridgeInventory
     /**
      * @return int
      */
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
     }
@@ -98,7 +98,7 @@ class FridgeInventory
      * @param int $id
      * @return FridgeInventory
      */
-    public function setId(int $id): FridgeInventory
+    public function setId(int $id)
     {
         $this->id = $id;
         return $this;
@@ -107,7 +107,7 @@ class FridgeInventory
     /**
      * @return Item
      */
-    public function getItemId(): Item
+    public function getItemId()
     {
         return $this->itemId;
     }
@@ -116,7 +116,7 @@ class FridgeInventory
      * @param Item $itemId
      * @return FridgeInventory
      */
-    public function setItemId(Item $itemId): FridgeInventory
+    public function setItemId(Item $itemId)
     {
         $this->itemId = $itemId;
         return $this;
@@ -125,7 +125,7 @@ class FridgeInventory
     /**
      * @return int|null
      */
-    public function getQuantity(): ?int
+    public function getQuantity()
     {
         return $this->quantity;
     }
@@ -134,7 +134,7 @@ class FridgeInventory
      * @param int|null $quantity
      * @return FridgeInventory
      */
-    public function setQuantity(?int $quantity): FridgeInventory
+    public function setQuantity(?int $quantity)
     {
         $this->quantity = $quantity;
         return $this;
@@ -143,7 +143,7 @@ class FridgeInventory
     /**
      * @return int|null
      */
-    public function getPrice(): ?int
+    public function getPrice()
     {
         return $this->price;
     }
@@ -152,7 +152,7 @@ class FridgeInventory
      * @param int|null $price
      * @return FridgeInventory
      */
-    public function setPrice(?int $price): FridgeInventory
+    public function setPrice(?int $price)
     {
         $this->price = $price;
         return $this;
@@ -161,7 +161,7 @@ class FridgeInventory
     /**
      * @return int|null
      */
-    public function getInitialQuantity(): ?int
+    public function getInitialQuantity()
     {
         return $this->initialQuantity;
     }
@@ -170,7 +170,7 @@ class FridgeInventory
      * @param int|null $initialQuantity
      * @return FridgeInventory
      */
-    public function setInitialQuantity(?int $initialQuantity): FridgeInventory
+    public function setInitialQuantity(?int $initialQuantity)
     {
         $this->initialQuantity = $initialQuantity;
         return $this;
@@ -188,7 +188,7 @@ class FridgeInventory
      * @param int $status
      * @return FridgeInventory
      */
-    public function setStatus(int $status): FridgeInventory
+    public function setStatus(int $status)
     {
         $this->status = $status;
         return $this;
@@ -197,7 +197,7 @@ class FridgeInventory
     /**
      * @return \DateTime
      */
-    public function getBoughtAt(): \DateTime
+    public function getBoughtAt()
     {
         return $this->boughtAt;
     }
@@ -206,7 +206,7 @@ class FridgeInventory
      * @param \DateTime $boughtAt
      * @return FridgeInventory
      */
-    public function setBoughtAt(\DateTime $boughtAt): FridgeInventory
+    public function setBoughtAt(\DateTime $boughtAt)
     {
         $this->boughtAt = $boughtAt;
         return $this;
@@ -215,7 +215,7 @@ class FridgeInventory
     /**
      * @return \DateTime|null
      */
-    public function getRemovedAt(): ?\DateTime
+    public function getRemovedAt()
     {
         return $this->removedAt;
     }
@@ -224,7 +224,7 @@ class FridgeInventory
      * @param \DateTime|null $removedAt
      * @return FridgeInventory
      */
-    public function setRemovedAt(?\DateTime $removedAt): FridgeInventory
+    public function setRemovedAt(?\DateTime $removedAt)
     {
         $this->removedAt = $removedAt;
         return $this;
@@ -233,7 +233,7 @@ class FridgeInventory
     /**
      * @return \DateTime|null
      */
-    public function getExpiredAt(): ?\DateTime
+    public function getExpiredAt()
     {
         return $this->expiredAt;
     }
@@ -242,7 +242,7 @@ class FridgeInventory
      * @param \DateTime|null $expiredAt
      * @return FridgeInventory
      */
-    public function setExpiredAt(?\DateTime $expiredAt): FridgeInventory
+    public function setExpiredAt(?\DateTime $expiredAt)
     {
         $this->expiredAt = $expiredAt;
         return $this;
@@ -260,7 +260,7 @@ class FridgeInventory
      * @param ClientFridge[] $owners
      * @return FridgeInventory
      */
-    public function setOwners(array $owners): FridgeInventory
+    public function setOwners(array $owners)
     {
         $this->owners = $owners;
         return $this;
