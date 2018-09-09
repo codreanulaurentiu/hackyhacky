@@ -25,13 +25,24 @@ class DatabaseCommand extends ContainerAwareCommand
         $entities = json_decode($string, true);
         $entities = $entities['rows'];
         $i = 0;
-        foreach ($entities as $entity) {
+        foreach ($entities as $entity) {$output->writeln(json_encode($entity));
             $item = new Item();
-            $item->setName($entity['0']);
-            $item->setExternalRef($entity['1']);
-            $item->setType(Item::ITEM_TYPE_STANDARD);
-            $item->setRecommendedExpireDate(5);
-            $em->persist($item);
+            try {
+
+                $item->setName($entity['0']);
+                $item->setExternalRef($entity['1']);
+                $item->setType(Item::ITEM_TYPE_STANDARD);
+                $item->setRecommendedExpireDate(5);
+                $em->persist($item);
+                $output->writeln($i);
+                $em->flush();
+
+                $em->clear();
+            } catch (\Exception $e) {
+                $output->writeln($e->getMessage());
+            } catch (\Throwable $e) {
+                $output->writeln($e->getMessage());
+            }
         }
         $em->flush();
     }

@@ -5,8 +5,8 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
- * @ORM\Table(name="item")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ItemRepository")
+ * @ORM\Table(name="item", indexes={@ORM\Index(columns={"name"}, flags={"fulltext"})})
  */
 class Item
 {
@@ -32,7 +32,7 @@ class Item
     /**
      * @var integer
      *
-     * @ORM\Column(type="datetime", name="recommended_expire_date")
+     * @ORM\Column(type="integer", name="recommended_expire_date")
      */
     private $recommendedExpireDate;
 

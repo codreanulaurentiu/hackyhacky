@@ -3,6 +3,8 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Fridge;
+use AppBundle\Entity\FridgeInventory;
+use AppBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
@@ -24,10 +26,12 @@ class FridgeController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $fridges = $em->getRepository('AppBundle:Fridge')->findAll();
+        $user = $em->getRepository(User::class)->findOneBy(['id' => 9]);
+        $fridge = $em->getRepository(Fridge::class)->findOneBy(['id' => 1]);
 
+        $fridgeItems = $em->getRepository(FridgeInventory::class)->findBy(['fridgeId' => 1]);
         return $this->render('fridge/index.html.twig', array(
-            'fridges' => $fridges,
+            'fridges' => $fridgeItems,
         ));
     }
 

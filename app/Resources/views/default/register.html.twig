@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container main-content">
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="title">&#206;nregistrare</h1>
+            {{ form_start(form) }}
+            <div class="form_group">
+                <div class="col-md-12">
+                    {{ form_row(form.username, {'label': 'Nume utilizator', 'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+            <div class="form_group">
+                <div class="col-md-12">
+                    {{ form_row(form.email, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+            <div class="form_group">
+                <div class="col-md-12">
+                    {{ form_row(form.password.first, {'label': 'Parolă', 'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+            <div class="form_group">
+                <div class="col-md-12">
+                    {{ form_row(form.password.second, {'label': 'Repetă parolă', 'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-8" style="margin-top:5px;">
+                    <button type="submit" class="btn btn-success">
+                        <i class="fa fa-btn fa-user"></i> &#206;nregistrare
+                    </button>
+                </div>
+            </div>
+
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div> <!-- /container -->
+{% endblock %}
+
+{% block bottom_scripts %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/app/js/vendor/TweenMax.min.js') }}"></script>
+    <script src="{{ asset('bundles/app/js/login-animate.js') }}"></script>
+{% endblock %}

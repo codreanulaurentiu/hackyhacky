@@ -372,11 +372,3 @@ header#sidemenu div.second-level {
     background-repeat: repeat;
     z-index: 101;
 }
-
-div#main {
-    margin-left: 220px;
-}
-
-div#content {
-    position: relative;
-}

@@ -3,35 +3,29 @@
 {% block body %}
     <h1>Fridges list</h1>
 
-    <table>
-        <thead>
+    <div class="container">
+        <div class="row">
+        <table class="table table-striped">
+            <thead>
             <tr>
-                <th>Id</th>
-                <th>Actions</th>
+                <th scope="col">Index</th>
+                <th scope="col">Produs</th>
+                <th scope="col">Dat&#259; ad&#259;ugare</th>
+                <th scope="col">Link</th>
             </tr>
-        </thead>
-        <tbody>
-        {% for fridge in fridges %}
-            <tr>
-                <td><a href="{{ path('fridge_show', { 'id': fridge.id }) }}">{{ fridge.id }}</a></td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('fridge_show', { 'id': fridge.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('fridge_edit', { 'id': fridge.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
+            </thead>
+            <tbody>
+            {% for fridge in fridges %}
+            <tr data-id="{{ fridge.id }}">
+                <td>{{ fridge.id }}</td>
+                <td>{{ fridge.itemId.name }}</td>
+                <td>{{ fridge.boughtAt |date('Y-m-d') }}</td>
+                <td><a href="http://www.emag.ro/asd/pd/{{ fridge.itemId.externalRef }}/" target="_blank" class="buy"><img src="{{ asset('bundles/app/img/emag_basket.png')}}" width="10%"></a></td>
             </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            {% endfor %}
 
-    <ul>
-        <li>
-            <a href="{{ path('fridge_new') }}">Create a new fridge</a>
-        </li>
-    </ul>
+            </tbody>
+        </table>
+        </div>
+    </div>
 {% endblock %}
